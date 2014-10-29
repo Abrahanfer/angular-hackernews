@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "angular-hackernews",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "A angularJs webapp for Hacker News API",
+  "repository": "https://github.com/Abrahanfer/angular-hackernews",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",
