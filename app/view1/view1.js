@@ -9,6 +9,8 @@ angular.module('myApp.view1', ['ngRoute'])
     });
   }])
 
-  .controller('View1Ctrl', [function($scope, TopStories) {
+  .controller('View1Ctrl', ['$scope', 'TopStories', function($scope,
+                                                             TopStories)
+                            {
     $scope.top = TopStories.query();
   }]);
