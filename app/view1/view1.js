@@ -9,8 +9,24 @@ angular.module('myApp.view1', ['ngRoute'])
     });
   }])
 
-  .controller('View1Ctrl', ['$scope', 'TopStories', function($scope,
-                                                             TopStories)
+  .controller('View1Ctrl', ['$scope', 'HNApi', function($scope,
+                                                        HNApi)
                             {
-    $scope.top = TopStories.query();
-  }]);
+                              var top = HNApi.top.query().$promise.then(function(tops){
+                                var items = [];
+                                var storyId;
+                                console.log();
+                                for(storyId in tops){
+                                  console.log(tops[storyId]);
+                                  var object = { id: tops[storyId] };
+                                  HNApi.item.query(object).$promise.then(function(item) {
+                                    items.push(item['title']);
+                                  });
+
+                                }
+                                $scope.items = items;
+                              });
+
+
+                              $scope.top = top;
+                            }]);
