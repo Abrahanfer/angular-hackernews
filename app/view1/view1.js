@@ -20,7 +20,7 @@ angular.module('myApp.view1', ['ngRoute'])
                                   console.log(tops[storyId]);
                                   var object = { id: tops[storyId] };
                                   HNApi.item.query(object).$promise.then(function(item) {
-                                    items.push(item['title']);
+                                    items.push(item);
                                   });
 
                                 }
