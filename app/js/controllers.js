@@ -2,6 +2,8 @@
 
 var indexControllers = angular.module('myApp.indexControllers', []);
 
+
+//Testing magit use
 indexControllers.controller('TopStoriesCtrl', ['$scope', 'HNApi',
                                                function($scope, HNApi)
 {
